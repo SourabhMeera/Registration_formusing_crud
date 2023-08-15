@@ -62,7 +62,7 @@
             const childElem = document.createElement('li');
             childElem.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phonenumber;
 
-            const deleteButton = document.createElement('button'); // Change input type to button
+            const deleteButton = document.createElement('button'); // Changed input type to button
             deleteButton.textContent = 'Delete'; // Use textContent instead of value
             deleteButton.onclick = () => {
                 axios.delete(`https://crudcrud.com/api/5a974ec1a8624db281d92897e7f87e15/appointmentData/${obj._id}`)
@@ -77,12 +77,9 @@
             
             
 
-            const editButton = document.createElement('input');
-            editButton.type = "button";
-            editButton.value = 'Edit';
+                const editButton = document.createElement('button'); // Changed input type to button
+            editButton.textContent = 'Edit'; // Use textContent instead of value
             editButton.onclick = () => {
-                localStorage.removeItem(obj.email);
-                parentElem.removeChild(childElem);
                 document.getElementById('usernameInputTag').value = obj.name;
                 document.getElementById('emailInputTag').value = obj.email;
                 document.getElementById('phoneNumberInputTag').value = obj.phonenumber;
